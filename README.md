@@ -15,3 +15,6 @@ db_name = // <- gunakan credentials masing-masing
 ```
 dsn := fmt.Sprintf("postgres://%s:%s@%s:%d/%s",db_user, db_pass, db_host, db_port, db_name)
 ```
+
+## Postman API Setup
+Import file Postman API yang ada di GitHub Repo sebagai collection di local machine anda
