@@ -35,10 +35,10 @@ func main() {
 	router.Handle("/comments/{commentId}", middlewares.Authentication(http.HandlerFunc(h.DeleteComment))).Methods(http.MethodDelete)
 
 	router.Handle("/socialmedias", middlewares.Authentication(http.HandlerFunc(h.CreateSocialMedia))).Methods(http.MethodPost)
-	router.Handle("/socialmedias", middlewares.Authentication(http.HandlerFunc(h.GetAllSocialMedias))).Methods(http.MethodGet) // This need fix
-	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.GetSocialMedia))).Methods(http.MethodGet) // This need fix
-	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.UpdateSocialMedia))).Methods(http.MethodPut) // This need fix
-	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.DeleteSocialMedia))).Methods(http.MethodDelete) // This need fix
+	router.Handle("/socialmedias", middlewares.Authentication(http.HandlerFunc(h.GetAllSocialMedias))).Methods(http.MethodGet)
+	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.GetSocialMedia))).Methods(http.MethodGet)
+	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.UpdateSocialMedia))).Methods(http.MethodPut)
+	router.Handle("/socialmedias/{socialMediaId}", middlewares.Authentication(http.HandlerFunc(h.DeleteSocialMedia))).Methods(http.MethodDelete)
 
 	fmt.Println("Listening to port :8080")
 	http.ListenAndServe(":8080", router)
